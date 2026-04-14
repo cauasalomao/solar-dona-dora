@@ -275,6 +275,8 @@ section { padding: clamp(3rem, 7vw, 5.5rem) 0; }
 }
 @media (min-width: 900px) {
   .ab-grid { grid-template-columns: 1fr 1fr; gap: 4rem; }
+  .ab-grid--reverse .ab-img { order: 2; }
+  .ab-grid--reverse .ab-txt { order: 1; }
 }
 .ab-img {
   border-radius: 6px; overflow: hidden;
