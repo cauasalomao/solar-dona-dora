@@ -3,7 +3,9 @@
     "allow": [
       "Bash(xxd \"C:/Users/cauas/Downloads/pousada-solar-dona-dora/briefing-dona-dora.md\")",
       "Bash(git remote:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit -m ':*)",
+      "Bash(git push:*)"
     ]
   }
 }
