@@ -7,4 +7,6 @@
   <url><loc>https://pousadasolardonadora.com.br/galeria/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://pousadasolardonadora.com.br/localizacao/</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
   <url><loc>https://pousadasolardonadora.com.br/contato/</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://pousadasolardonadora.com.br/blog/</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://pousadasolardonadora.com.br/blog/canions-capitolio-passeio-lancha/</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
 </urlset>

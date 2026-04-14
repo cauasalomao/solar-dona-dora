@@ -56,16 +56,17 @@
     "footer_cta": "Hospede-se na Pousada Solar Dona Dora — seu refúgio às margens do Lago de Furnas, em Capitólio."
   },
 
-  "published": [],
-
-  "upcoming": [
+  "published": [
     {
       "topic": "Cânions de Capitólio: guia completo para o seu primeiro passeio de lancha",
       "pillar": "Aventura",
       "target_keywords": ["cânions de capitólio", "passeio de lancha capitólio", "lago de furnas passeio"],
-      "target_date": "2026-04-15",
+      "published_date": "2026-04-15",
       "slug": "canions-capitolio-passeio-lancha"
-    },
+    }
+  ],
+
+  "upcoming": [
     {
       "topic": "O que fazer em Capitólio: roteiro de 3 dias imperdível",
       "pillar": "Destino",
