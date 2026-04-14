@@ -9,7 +9,10 @@
       "WebFetch(domain:cauasalomao.github.io)",
       "Bash(node:*)",
       "Bash(ls assets/img/galeria/*.jpg)",
-      "Bash(ls -1 assets/img/galeria/*.jpg)"
+      "Bash(ls -1 assets/img/galeria/*.jpg)",
+      "Bash(git commit:*)",
+      "Bash(sed -i 's|<a href=\"\\\\.\\\\./\\\\.\\\\./galeria/\">Galeria</a>|<a href=\"../../galeria/\">Galeria</a>\\\\n      <a href=\"../../blog/\">Blog</a>|' blog/canions-capitolio-passeio-lancha/index.html)",
+      "Bash(sed -i 's|<a href=\"\\\\.\\\\./\\\\.\\\\./galeria/\" onclick=\"closeMob\\(\\)\">Galeria</a>|<a href=\"../../galeria/\" onclick=\"closeMob\\(\\)\">Galeria</a>\\\\n  <a href=\"../../blog/\" onclick=\"closeMob\\(\\)\">Blog</a>|' blog/canions-capitolio-passeio-lancha/index.html)"
     ]
   }
 }
