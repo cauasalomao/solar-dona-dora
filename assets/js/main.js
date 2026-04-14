@@ -224,6 +224,14 @@ async function submitPkgForm(e) {
 }
 
 // ============================================
+// WHATSAPP BUBBLE
+// ============================================
+setTimeout(() => {
+  const bubble = document.getElementById('waBubble');
+  if (bubble) bubble.classList.add('show');
+}, 3000);
+
+// ============================================
 // SET MIN DATE on date inputs
 // ============================================
 document.addEventListener('DOMContentLoaded', () => {
