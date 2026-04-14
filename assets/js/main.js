@@ -141,61 +141,48 @@ document.addEventListener('keydown', e => {
 });
 
 // ============================================
-// WHATSAPP MODAL
+// BOOKING MODAL
 // ============================================
-function openWAModal() {
-  document.getElementById('waModal')?.classList.add('open');
+function openBooking() {
+  document.getElementById('bkModal')?.classList.add('open');
   document.body.style.overflow = 'hidden';
 }
-function closeWAModal() {
-  document.getElementById('waModal')?.classList.remove('open');
+function closeBooking() {
+  document.getElementById('bkModal')?.classList.remove('open');
   document.body.style.overflow = '';
 }
-async function submitWAForm(e) {
+function updateChildAges() {
+  const n = parseInt(document.getElementById('bk-children')?.value || '0');
+  const container = document.getElementById('bkChildAges');
+  if (!container) return;
+  container.innerHTML = '';
+  for (let i = 0; i < n; i++) {
+    const fg = document.createElement('div');
+    fg.className = 'fg';
+    fg.innerHTML = `<label>Idade crianca ${i + 1}</label>
+      <select id="bk-child-${i}">
+        ${Array.from({ length: 13 }, (_, a) => `<option value="${a}">${a} ${a === 1 ? 'ano' : 'anos'}</option>`).join('')}
+      </select>`;
+    container.appendChild(fg);
+  }
+}
+function submitBooking(e) {
   e.preventDefault();
-  const nome = document.getElementById('wa-nome').value;
-  const email = document.getElementById('wa-email').value;
-  const tel = document.getElementById('wa-tel').value;
-  const ci = document.getElementById('wa-in').value;
-  const co = document.getElementById('wa-out').value;
-  await sendToWebhook({ tipo: 'whatsapp_lead', nome, email, telefone: tel, checkin: ci, checkout: co });
-  const msg = encodeURIComponent(
-    `Olá! Me chamo ${nome}.\nE-mail: ${email}\nTelefone: ${tel}` +
-    (ci ? `\nCheck-in: ${ci}` : '') +
-    (co ? `\nCheck-out: ${co}` : '') +
-    `\n\nGostaria de mais informações sobre a Pousada Solar Dona Dora.`
-  );
-  window.open(`https://wa.me/${CONFIG.WA_NUMBER}?text=${msg}`, '_blank');
-  closeWAModal();
+  const ci = document.getElementById('bk-checkin').value;
+  const co = document.getElementById('bk-checkout').value;
+  const adults = document.getElementById('bk-adults').value;
+  const nChildren = parseInt(document.getElementById('bk-children')?.value || '0');
+  const childAges = [];
+  for (let i = 0; i < nChildren; i++) {
+    const age = document.getElementById(`bk-child-${i}`)?.value;
+    if (age !== undefined) childAges.push(age);
+  }
+  const url = buildBookingURL(ci, co, adults, childAges);
+  window.open(url, '_blank', 'noopener');
+  closeBooking();
 }
-document.getElementById('waModal')?.addEventListener('click', e => {
-  if (e.target === document.getElementById('waModal')) closeWAModal();
-});
-
-// ============================================
-// POPUP DESCONTO
-// ============================================
-(function() {
-  if (localStorage.getItem('dp_shown')) return;
-  setTimeout(() => {
-    const popup = document.getElementById('dp');
-    if (!popup) return;
-    popup.classList.add('open');
-    localStorage.setItem('dp_shown', '1');
-  }, 5000);
-})();
-
-function closePopup() {
-  document.getElementById('dp')?.classList.remove('open');
-}
-async function submitPopup(e) {
-  e.preventDefault();
-  const email = document.getElementById('popup-email').value;
-  await sendToWebhook({ tipo: 'lead_popup', email, desconto: '10%' });
-  closePopup();
-}
-document.getElementById('dp')?.addEventListener('click', e => {
-  if (e.target === document.getElementById('dp')) closePopup();
+document.getElementById('bkModal')?.addEventListener('click', e => {
+  if (e.target === document.getElementById('bkModal')) closeBooking();
 });
 
 // ============================================
