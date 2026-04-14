@@ -7,7 +7,9 @@
       "Bash(git commit -m ':*)",
       "Bash(git push:*)",
       "WebFetch(domain:cauasalomao.github.io)",
-      "Bash(node:*)"
+      "Bash(node:*)",
+      "Bash(ls assets/img/galeria/*.jpg)",
+      "Bash(ls -1 assets/img/galeria/*.jpg)"
     ]
   }
 }
