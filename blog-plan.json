@@ -1,6 +1,6 @@
 {
   "editorial_strategy": {
-    "goal": "Atrair tráfego orgânico qualificado para a região do hotel via conteúdo informativo e inspiracional, gerando reservas",
+    "goal": "Atrair tráfego orgânico qualificado para Capitólio e região via conteúdo informativo e inspiracional, gerando reservas na Pousada Solar Dona Dora",
     "tone": "Informativo e acolhedor, com CTAs sutis para reserva. Escrita em português brasileiro, sem ser excessivamente formal.",
     "word_count": "800-1200",
     "target_keywords_per_post": 3,
@@ -10,34 +10,34 @@
     "content_pillars": [
       {
         "pillar": "Destino",
-        "description": "O que fazer, onde ir, roteiros pela região do hotel",
-        "example_topics": ["Melhores praias da Barra da Tijuca", "Trilhas na Floresta da Tijuca", "O que fazer no Rio em 3 dias"]
+        "description": "O que fazer, onde ir, roteiros por Capitólio e região do Lago de Furnas",
+        "example_topics": ["Cânions de Capitólio: guia completo", "Melhores cachoeiras de Capitólio", "O que fazer em Capitólio em 3 dias"]
       },
       {
         "pillar": "Experiência",
-        "description": "Vivências no hotel e arredores, gastronomia, relaxamento",
-        "example_topics": ["Roteiro romântico no Itanhangá", "Gastronomia carioca perto da Barra", "Desconectar sem sair do Rio"]
+        "description": "Vivências na pousada e arredores, gastronomia mineira, relaxamento, natureza",
+        "example_topics": ["Roteiro romântico em Capitólio", "Gastronomia mineira em Capitólio", "Pôr do sol no Lago de Furnas"]
       },
       {
-        "pillar": "Eventos",
-        "description": "Eventos no RioCentro, Parque Olímpico, shows e temporadas",
-        "example_topics": ["Onde ficar durante eventos no RioCentro", "Agenda cultural do Rio 2026", "Rock in Rio: hospedagem perto"]
+        "pillar": "Aventura",
+        "description": "Esportes radicais, trilhas, passeios de lancha e 4x4, ecoturismo",
+        "example_topics": ["Passeio de lancha pelos cânions", "Rapel em Capitólio", "Trilhas na Serra da Canastra"]
       },
       {
         "pillar": "Dicas práticas",
-        "description": "Informações úteis para quem visita a região",
-        "example_topics": ["Como chegar ao Itanhangá", "Melhores épocas para visitar o Rio", "Transporte na zona oeste do Rio"]
+        "description": "Informações úteis para quem visita Capitólio e região",
+        "example_topics": ["Como chegar a Capitólio", "Melhor época para visitar Capitólio", "O que levar para Capitólio"]
       }
     ]
   },
 
   "seo_rules": {
-    "title_format": "{Título do Post} | Blog Pousada MontVerde",
+    "title_format": "{Título do Post} | Blog Pousada Solar Dona Dora",
     "meta_description_max_chars": 155,
     "url_slug_format": "lowercase, hifenizado, sem acentos, max 5 palavras",
     "heading_structure": "H1 único (título), H2 para seções, H3 para subseções",
     "schema_type": "BlogPosting",
-    "canonical_base": "https://pousadamontverde.com.br/blog/",
+    "canonical_base": "https://pousadasolardonadora.com.br/blog/",
     "open_graph_type": "article",
     "required_meta": [
       "title", "meta description", "canonical", "og:title", "og:description",
@@ -53,53 +53,67 @@
       "CTA final (link para reserva ou contato)",
       "Links internos naturais no texto"
     ],
-    "footer_cta": "Hospede-se na Pousada MontVerde — seu refúgio no Itanhangá, a minutos de tudo no Rio."
+    "footer_cta": "Hospede-se na Pousada Solar Dona Dora — seu refúgio às margens do Lago de Furnas, em Capitólio."
   },
 
-  "published": [
-    {
-      "slug": "trilhas-floresta-tijuca-iniciantes",
-      "date": "2026-04-09",
-      "title": "Melhores Trilhas na Floresta da Tijuca para Iniciantes",
-      "keywords": ["trilhas tijuca", "floresta da tijuca trilhas", "ecoturismo rio de janeiro"]
-    }
-  ],
+  "published": [],
 
   "upcoming": [
     {
-      "topic": "O que fazer na Barra da Tijuca além da praia",
-      "pillar": "Destino",
-      "target_keywords": ["barra da tijuca o que fazer", "pontos turísticos barra", "passeios barra da tijuca"],
+      "topic": "Cânions de Capitólio: guia completo para o seu primeiro passeio de lancha",
+      "pillar": "Aventura",
+      "target_keywords": ["cânions de capitólio", "passeio de lancha capitólio", "lago de furnas passeio"],
       "target_date": "2026-04-15",
-      "slug": "o-que-fazer-barra-da-tijuca"
+      "slug": "canions-capitolio-passeio-lancha"
     },
     {
-      "topic": "Roteiro romântico de fim de semana no Rio de Janeiro",
-      "pillar": "Experiência",
-      "target_keywords": ["roteiro romântico rio", "fim de semana romântico rj", "pousada romântica rio"],
-      "target_date": "2026-04-18",
-      "slug": "roteiro-romantico-rio-de-janeiro"
-    },
-    {
-      "topic": "Guia completo: onde ficar durante eventos no RioCentro",
-      "pillar": "Eventos",
-      "target_keywords": ["hotel perto riocentro", "hospedagem riocentro", "onde ficar riocentro"],
-      "target_date": "2026-04-22",
-      "slug": "onde-ficar-eventos-riocentro"
-    },
-    {
-      "topic": "Pedra da Gávea: como visitar e o que esperar",
+      "topic": "O que fazer em Capitólio: roteiro de 3 dias imperdível",
       "pillar": "Destino",
-      "target_keywords": ["pedra da gávea trilha", "como subir pedra da gávea", "pedra da gávea rio"],
-      "target_date": "2026-04-25",
-      "slug": "pedra-da-gavea-como-visitar"
+      "target_keywords": ["o que fazer em capitólio", "roteiro capitólio 3 dias", "capitólio mg turismo"],
+      "target_date": "2026-04-18",
+      "slug": "o-que-fazer-capitolio-3-dias"
     },
     {
-      "topic": "Desconectar sem sair da cidade: o conceito de refúgio urbano",
+      "topic": "Melhores cachoeiras de Capitólio e como chegar",
+      "pillar": "Destino",
+      "target_keywords": ["cachoeiras capitólio", "melhores cachoeiras capitólio", "cachoeiras lago de furnas"],
+      "target_date": "2026-04-22",
+      "slug": "melhores-cachoeiras-capitolio"
+    },
+    {
+      "topic": "Roteiro romântico em Capitólio: fim de semana a dois no Lago de Furnas",
       "pillar": "Experiência",
-      "target_keywords": ["refúgio urbano rio", "desconectar no rio de janeiro", "pousada natureza rio"],
+      "target_keywords": ["roteiro romântico capitólio", "fim de semana capitólio casal", "pousada romântica capitólio"],
+      "target_date": "2026-04-25",
+      "slug": "roteiro-romantico-capitolio"
+    },
+    {
+      "topic": "Serra da Canastra saindo de Capitólio: trilhas, cachoeiras e mirantes",
+      "pillar": "Aventura",
+      "target_keywords": ["serra da canastra capitólio", "trilhas serra da canastra", "ecoturismo capitólio"],
       "target_date": "2026-04-29",
-      "slug": "refugio-urbano-desconectar-rio"
+      "slug": "serra-da-canastra-saindo-capitolio"
+    },
+    {
+      "topic": "Melhor época para visitar Capitólio: clima, nível do lago e movimento",
+      "pillar": "Dicas práticas",
+      "target_keywords": ["melhor época capitólio", "quando ir a capitólio", "capitólio nível lago furnas"],
+      "target_date": "2026-05-02",
+      "slug": "melhor-epoca-visitar-capitolio"
+    },
+    {
+      "topic": "Gastronomia mineira em Capitólio: onde comer e o que provar",
+      "pillar": "Experiência",
+      "target_keywords": ["gastronomia capitólio", "onde comer capitólio", "comida mineira capitólio"],
+      "target_date": "2026-05-05",
+      "slug": "gastronomia-mineira-capitolio"
+    },
+    {
+      "topic": "Passeio de 4x4 em Capitólio: cachoeiras e mirantes fora do circuito turístico",
+      "pillar": "Aventura",
+      "target_keywords": ["passeio 4x4 capitólio", "mirantes capitólio", "morro do chapéu capitólio"],
+      "target_date": "2026-05-09",
+      "slug": "passeio-4x4-capitolio"
     }
   ]
 }

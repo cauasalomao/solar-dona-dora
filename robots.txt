@@ -1,4 +1,8 @@
+# Pousada Solar Dona Dora — robots.txt
 User-agent: *
 Allow: /
 
-Sitemap: https://pousadamontverde.com.br/sitemap.xml
+Sitemap: https://pousadasolardonadora.com.br/sitemap.xml
+
+Disallow: /assets/css/
+Disallow: /assets/js/

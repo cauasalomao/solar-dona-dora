@@ -1,125 +1,196 @@
 {
   "hotel": {
-    "name": "Pousada MontVerde",
-    "tagline": "Seu refúgio perfeito no Itanhangá",
-    "description_short": "Pousada no coração do Itanhangá, Rio de Janeiro. Refúgio verde a minutos da Barra, Parque Olímpico e Floresta da Tijuca.",
-    "description_long": "A Pousada MontVerde nasceu com uma proposta única: oferecer qualidade de vida e descanso genuíno sem exigir que você abra mão das conveniências da cidade. Somos um refúgio verde, tranquilo e seguro, encravado no Itanhangá — bairro nobre do Rio de Janeiro. A poucos minutos da Praia da Barra, do Parque Olímpico, do RioCentro e da Floresta da Tijuca.",
-    "style": "Refúgio urbano, natureza com conveniência, verde e tranquilo",
-    "target_audience": "Famílias, casais e viajantes corporativos que buscam tranquilidade com acesso fácil à cidade",
+    "name": "Pousada Solar Dona Dora",
+    "tagline": "Um refúgio longe da cidade",
+    "description_short": "Pousada familiar às margens do Lago de Furnas em Capitólio, MG. Culinária mineira caseira, vista para a represa e o melhor pôr do sol da região.",
+    "description_long": "A Pousada Solar Dona Dora nasceu de um legado de amor e acolhimento. O que era um rancho de férias para os oito filhos de Dona Dora se transformou, em 2015, em uma pousada que mantém a essência de reunir pessoas com conforto, simplicidade e convivência. Localizada às margens do Lago de Furnas, a 12 km do centro de Capitólio, oferecemos hospitalidade genuína, culinária mineira caseira e uma vista privilegiada para a represa e o pôr do sol.",
+    "brand_story": "Legado de amor e acolhimento. Um lugar cheio de memória afetiva, com a essência de reunir a família com conforto, simplicidade e convivência. Originalmente um rancho de férias para os oito filhos de Dona Dora, transformado em pousada em 2015.",
+    "style": "Refúgio acolhedor e autêntico, hospitalidade familiar, simplicidade bem feita com natureza",
+    "target_audience": "Famílias, casais e viajantes que buscam tranquilidade, natureza e hospedagem familiar acolhedora em Capitólio",
     "tone": "Acolhedor, confiável, natureza como protagonista, sem ser formal"
   },
 
   "contact": {
-    "phone": "(21) 99691-5036",
-    "phone_international": "+55-21-99691-5036",
-    "email": "contato@pousadamontverde.com",
-    "wa_number": "5521996915036",
-    "instagram": "pousada_montverde",
-    "instagram_url": "https://instagram.com/pousada_montverde"
+    "phone": "(37) 9 9999-6427",
+    "phone_international": "+55-37-99999-6427",
+    "whatsapp": "(37) 9 9955-3707",
+    "wa_number": "5537999553707",
+    "email": "contato@pousadasolardonadora.com.br",
+    "instagram": "solardonadoracapitolio",
+    "instagram_url": "https://instagram.com/solardonadoracapitolio"
   },
 
   "address": {
-    "street": "R. Itália Fausta, 105",
-    "neighborhood": "Itanhangá",
-    "city": "Rio de Janeiro",
-    "state": "RJ",
-    "zip": "22641-440",
+    "street": "Estrada do Dique/Ilha km 13, s/n",
+    "neighborhood": "Zona Rural",
+    "city": "Capitólio",
+    "state": "MG",
+    "zip": "37930-000",
     "country": "BR",
     "coordinates": {
-      "lat": -22.986,
-      "lng": -43.352
+      "lat": -20.681273,
+      "lng": -46.094552
     }
   },
 
   "business": {
-    "cnpj": "63.165.135/0001-27",
+    "cnpj": "34.959.050/0001-12",
     "number_of_rooms": 16,
     "checkin_time": "14:00",
     "checkout_time": "12:00",
-    "price_range": "$$"
+    "price_range": "$$",
+    "year_opened": 2015,
+    "children_policy": "Não pagam de 0 a 6 anos",
+    "payment": "Até 6x nos cartões de crédito"
   },
 
   "amenities": [
     "Piscina",
-    "Sauna",
-    "Churrasqueira",
-    "Ar-condicionado",
-    "Wi-Fi"
+    "Restaurante",
+    "Café da manhã incluso",
+    "Estacionamento gratuito",
+    "Wi-Fi grátis",
+    "Área de recreação infantil",
+    "Sala de jogos",
+    "Stand-up paddle e caiaques gratuitos",
+    "Vista para o Lago de Furnas"
   ],
 
   "differentials": [
-    "Refúgio verde no coração do Rio de Janeiro",
-    "Minutos da Barra da Tijuca, Parque Olímpico e Floresta da Tijuca",
-    "Ambiente controlado, íntimo e seguro",
-    "Base estratégica para eventos no RioCentro"
+    "Hospitalidade familiar genuína — legado de Dona Dora desde 2015",
+    "Localização privilegiada às margens do Lago de Furnas",
+    "Pôr do sol direto da pousada com vista para a represa",
+    "Culinária mineira caseira preparada diariamente",
+    "Passeios de lancha exclusivos saindo direto da pousada",
+    "Atendimento personalizado — cada hóspede recebido com proximidade",
+    "Stand-up paddle e caiaques gratuitos na represa"
   ],
 
   "nearby_attractions": [
-    "Praia da Barra da Tijuca",
-    "Parque Olímpico",
-    "Floresta da Tijuca",
-    "Pedra da Gávea",
-    "Itanhangá Golf Club",
-    "RioCentro"
+    "Cânions de Capitólio",
+    "Lago de Furnas (Mar de Minas)",
+    "Escarpas do Lago",
+    "Cachoeiras dos Cânions",
+    "Morro do Chapéu",
+    "Serra da Canastra",
+    "Cachoeira Fecho da Serra",
+    "Cachoeira do Grito — Trilha do Sol",
+    "Mirantes de Capitólio"
+  ],
+
+  "experiences": [
+    {
+      "name": "Passeio de Lancha",
+      "description": "Tour pelos cânions de Capitólio com saída direto da pousada. Cachoeiras escondidas, paredões imponentes e águas cristalinas do Lago de Furnas.",
+      "duration": "4-6 horas",
+      "operator": "Pousada (exclusivo para hóspedes)"
+    },
+    {
+      "name": "Passeio de 4x4",
+      "description": "Aventura off-road pelas cachoeiras de águas cristalinas e mirantes da região, incluindo o Morro do Chapéu com vista para Escarpas do Lago.",
+      "duration": "4 horas",
+      "operator": "Saída direto da pousada, diversos roteiros disponíveis"
+    },
+    {
+      "name": "Rapel",
+      "description": "Rapel na Cachoeira Fecho da Serra ou Cachoeira do Grito na Trilha do Sol. Operado pela Entre Rumos.",
+      "duration": "Variável",
+      "operator": "Entre Rumos — (11) 99679-0649"
+    }
   ],
 
   "rooms": [
     {
-      "category": "casal",
-      "name": "Duplo & Queen",
-      "label": "Para casais",
-      "capacity": 2,
-      "image": "assets/img/quartos/casal.jpg"
-    },
-    {
-      "category": "familia",
-      "name": "Triplo & Quádruplo",
-      "label": "Para famílias",
+      "category": "executiva",
+      "name": "Suíte Executiva",
+      "label": "Vista Premium",
       "capacity": 4,
-      "image": "assets/img/quartos/triplo-beliche.jpg"
+      "qty": 4,
+      "amenities": ["Cama casal", "2 camas solteiro", "TV", "Ventilador de teto", "Frigobar", "Sacada e varanda com vista para o Lago de Furnas", "Banheiro privativo", "Café da manhã incluso"],
+      "image": "assets/img/quartos/suite-sacada.jpg"
     },
     {
-      "category": "grupo",
-      "name": "Sêxtuplo & Óctuplo",
-      "label": "Para grupos",
-      "capacity": 8,
-      "image": "assets/img/quartos/sextuplo.jpg"
+      "category": "terreo-varanda",
+      "name": "Suíte Térreo com Varanda",
+      "label": "Vista Represa",
+      "capacity": 4,
+      "qty": 4,
+      "amenities": ["Cama casal", "2 camas solteiro", "TV", "Ventilador de teto", "Frigobar", "Varanda com vista para o Lago de Furnas", "Banheiro privativo", "Café da manhã incluso"],
+      "image": "assets/img/quartos/suite-terreo-varanda.jpg"
+    },
+    {
+      "category": "terreo-sem-varanda",
+      "name": "Suíte Térreo sem Varanda",
+      "label": "Família",
+      "capacity": 6,
+      "qty": 4,
+      "amenities": ["Cama casal", "2 camas beliches", "TV", "Ventilador de teto", "Frigobar", "Banheiro privativo", "Café da manhã incluso"],
+      "image": "assets/img/quartos/suite-terreo-sem-varanda.jpg"
+    },
+    {
+      "category": "standard",
+      "name": "Quarto Standard",
+      "label": "Econômico",
+      "capacity": 6,
+      "qty": 4,
+      "amenities": ["Cama casal", "2 camas beliches", "Ventilador de teto", "Banheiro compartilhado externo", "Café da manhã incluso"],
+      "image": "assets/img/quartos/quarto-standard.jpg"
+    }
+  ],
+
+  "testimonials": [
+    {
+      "name": "Gabriel",
+      "text": "Lugar excelente, o Henrique é uma pessoa incrível, sempre disposto a fazer o melhor que pode pelos hóspedes, fiquei muito contente nesta pousada!"
+    },
+    {
+      "name": "Islane",
+      "text": "A pousada possui uma vista muito bonita, gostamos dos stand-ups e caiaques gratuitos para usar na represa em frente, a equipe é muito atenciosa e simpática."
+    },
+    {
+      "name": "Manassés",
+      "text": "O local é privilegiado, o pessoal em geral (todos) são agradáveis, gentis, atentos, equipe nota 10."
     }
   ],
 
   "integrations": {
-    "webhook_url": "https://webhook.cidigitalmarketing.com/webhook/7c87bd71-6c33-437f-9073-2fae80d76d2f",
-    "gtm_id": "GTM-MXDKKWH3",
-    "hqbeds_url": "https://booking.hqbeds.com.br/montverde/rooms",
-    "maps_embed_url": "",
-    "domain": "https://pousadamontverde.com.br"
+    "webhook_url": "https://webhook.cidigitalmarketing.com/webhook/4f596ba5-158b-4c54-9958-0cf8353907ec",
+    "gtm_id": "GTM-W4K5VQJ",
+    "motor_base": "https://pousadasolardonadora.com.br",
+    "maps_embed_url": "https://www.google.com/maps?ll=-20.681273,-46.094552&z=14&t=m&hl=pt-BR&gl=BR&output=embed",
+    "domain": "https://pousadasolardonadora.com.br"
   },
 
   "design": {
-    "accent_color": "#3c614f",
-    "cta_color": "#92783b",
-    "bg_color": "#f8f5f0",
-    "font_display": "Pinyon Script",
-    "font_body": "Raleway"
+    "accent_color": "#FEB50E",
+    "accent_hover": "#E5A00D",
+    "bg_color": "#F0E5F5",
+    "surface_color": "#FFFFFF",
+    "surface_light": "#E8DDF0",
+    "text_color": "#1A1A1A",
+    "text_muted": "#5A5A5A",
+    "font_display": "Poppins",
+    "font_body": "Poppins"
   },
 
   "blog": {
     "enabled": true,
     "topics_focus": [
-      "turismo no Rio de Janeiro",
-      "natureza e trilhas na Tijuca",
-      "eventos no RioCentro e Parque Olímpico",
-      "praias da zona oeste do Rio",
-      "gastronomia carioca",
-      "dicas de viagem para o Rio",
-      "roteiros românticos no Rio",
-      "ecoturismo urbano"
+      "turismo em Capitólio e região",
+      "cânions e Lago de Furnas",
+      "cachoeiras de Capitólio",
+      "Serra da Canastra e ecoturismo",
+      "gastronomia mineira",
+      "dicas de viagem para Capitólio",
+      "roteiros românticos em Minas Gerais",
+      "aventura e esportes radicais em Capitólio"
     ],
     "seo_region_keywords": [
-      "Itanhangá", "Barra da Tijuca", "Rio de Janeiro",
-      "Floresta da Tijuca", "Pedra da Gávea", "zona oeste RJ"
+      "Capitólio", "Lago de Furnas", "Cânions de Capitólio",
+      "Serra da Canastra", "Escarpas do Lago", "Minas Gerais",
+      "Mar de Minas", "sul de Minas"
     ],
-    "internal_link_targets": ["acomodacoes", "experiencia", "contato", "galeria"],
-    "cta_default": "Reserve sua estadia na Pousada MontVerde"
+    "internal_link_targets": ["acomodacoes", "experiencias", "contato", "galeria", "pacotes"],
+    "cta_default": "Reserve sua estadia na Pousada Solar Dona Dora"
   }
 }

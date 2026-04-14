@@ -4,9 +4,13 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Static HTML hotel website template built by Komplexa Hoteis. No build tools, no frameworks, no package.json — pure HTML5, CSS3, and vanilla JavaScript. Deploy to any static host (GitHub Pages, Netlify, Vercel).
+Static HTML hotel website for **Pousada Solar Dona Dora**, built by Komplexa Hoteis. No build tools, no frameworks, no package.json — pure HTML5, CSS3, and vanilla JavaScript. Deploy to any static host (GitHub Pages, Netlify, Vercel).
 
-This project is designed to be **replicable**: clone, swap out hotel-specific content (text, images, config constants), and deploy a new hotel site with the same design system.
+This site was cloned from the Pousada MontVerde template. The design system is **replicable**: clone, swap out hotel-specific content (text, images, config constants via `hotel-config.json`), and deploy a new hotel site.
+
+### Replication status
+
+This repo still contains MontVerde placeholder content that must be replaced with Solar Dona Dora data. To perform the conversion, update `hotel-config.json` with all Solar Dona Dora information, then prompt: "Replique este site usando hotel-config.json. Gere todos os textos personalizados com base no contexto, público-alvo e tom de voz definidos." See the "Replicating for a new hotel" section below for the full checklist.
 
 ## Development
 
@@ -128,7 +132,7 @@ Editorial strategy and content calendar. Contains:
 ### Blog post SEO checklist
 
 Every post MUST have:
-- [ ] Unique `<title>` with primary keyword (format: `{Title} | Blog Pousada MontVerde`)
+- [ ] Unique `<title>` with primary keyword (format: `{Title} | Blog {HOTEL_NAME}` — use name from `hotel-config.json`)
 - [ ] `<meta name="description">` ≤ 155 chars with primary keyword
 - [ ] `<link rel="canonical">` pointing to the post URL
 - [ ] Open Graph tags: `og:title`, `og:description`, `og:url`, `og:type=article`, `og:image`

@@ -1,130 +1,243 @@
-/* ============================================================
-   POUSADA MONTVERDE — main.js v3
-   Komplexa Hotéis
-   ============================================================ */
+// ============================================
+// POUSADA SOLAR DONA DORA — main.js
+// Vanilla JS, no dependencies
+// ============================================
 
-const WEBHOOK_URL = 'https://webhook.cidigitalmarketing.com/webhook/7c87bd71-6c33-437f-9073-2fae80d76d2f';
-const HOTEL_NAME  = 'Pousada MontVerde';
+const CONFIG = {
+  WEBHOOK_URL: 'https://webhook.cidigitalmarketing.com/webhook/4f596ba5-158b-4c54-9958-0cf8353907ec',
+  WA_NUMBER: '5537999996427',
+  HOTEL_NAME: 'Pousada Solar Dona Dora',
+  MOTOR_BASE: 'https://pousadasolardonadora.com.br'
+};
 
-// ── dataLayer GTM ──
-window.dataLayer = window.dataLayer || [];
-function pushLead(tipo) {
-  window.dataLayer.push({
-    event:      'gerar_lead',
-    lead_tipo:  tipo,
-    pagina:     document.title,
-    url:        location.href
-  });
+// ============================================
+// MOTOR DE RESERVAS — Foco Multimídia
+// URL pattern: /search/YYYY-MM-DD/YYYY-MM-DD/adults[-childAge1-childAge2]
+// ============================================
+function buildBookingURL(checkin, checkout, adults, childAges) {
+  let guestStr = String(adults || 2);
+  if (childAges && childAges.length) {
+    guestStr += '-' + childAges.join('-');
+  }
+  if (!checkin || !checkout) {
+    return CONFIG.MOTOR_BASE + '/';
+  }
+  return `${CONFIG.MOTOR_BASE}/search/${checkin}/${checkout}/${guestStr}`;
 }
 
-// ── WEBHOOK ──
+function bookFromHero() {
+  const ci = document.getElementById('book-checkin')?.value;
+  const co = document.getElementById('book-checkout')?.value;
+  const guests = document.getElementById('book-guests')?.value || '2';
+  const url = buildBookingURL(ci, co, guests);
+  window.open(url, '_blank', 'noopener');
+}
+
+// ============================================
+// WEBHOOK
+// ============================================
 async function sendToWebhook(payload) {
+  if (!CONFIG.WEBHOOK_URL || CONFIG.WEBHOOK_URL.includes('[')) return;
   try {
-    await fetch(WEBHOOK_URL, {
-      method: 'POST', headers: { 'Content-Type': 'application/json' },
+    await fetch(CONFIG.WEBHOOK_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        hotel: HOTEL_NAME,
+        hotel: CONFIG.HOTEL_NAME,
         origem_pagina: document.title,
         url: location.href,
         timestamp: new Date().toISOString(),
         ...payload
       })
     });
-  } catch(e) { console.warn('Webhook:', e); }
+  } catch (e) { console.warn('Webhook error:', e); }
 }
 
-// ── HEADER SCROLL ──
-const hdr = document.getElementById('hdr');
-if (hdr && hdr.classList.contains('hero-mode')) {
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 80) { hdr.classList.add('solid'); hdr.classList.remove('hero-mode'); }
-    else { hdr.classList.remove('solid'); hdr.classList.add('hero-mode'); }
-  }, { passive: true });
-}
-
-// ── MOBILE MENU ──
+// ============================================
+// MOBILE MENU
+// ============================================
 const ham = document.getElementById('ham');
 const mob = document.getElementById('mobnav');
-function openMob()  { mob?.classList.add('open'); ham?.classList.add('open'); document.body.style.overflow='hidden'; ham?.setAttribute('aria-expanded','true'); }
-function closeMob() { mob?.classList.remove('open'); ham?.classList.remove('open'); document.body.style.overflow=''; ham?.setAttribute('aria-expanded','false'); }
-ham?.addEventListener('click', () => mob?.classList.contains('open') ? closeMob() : openMob());
 
-// ── LAZY LOAD ──
-const imgObs = new IntersectionObserver((entries) => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('loaded'); imgObs.unobserve(e.target); } });
-}, { rootMargin: '200px' });
-document.querySelectorAll('img').forEach(img => {
-  if (img.complete && img.naturalWidth > 0) img.classList.add('loaded');
-  else {
-    img.addEventListener('load',  () => img.classList.add('loaded'), {once:true});
-    img.addEventListener('error', () => img.classList.add('loaded'), {once:true});
-    imgObs.observe(img);
-  }
-});
-
-
-// ── COOKIE BANNER ──
-const ckBanner = document.getElementById('cookieBanner');
-if (ckBanner && !localStorage.getItem('ck_status')) ckBanner.classList.add('show');
-function acceptCookies()  { localStorage.setItem('ck_status','accepted'); if(ckBanner) ckBanner.classList.remove('show'); }
-function declineCookies() { localStorage.setItem('ck_status','declined'); if(ckBanner) ckBanner.classList.remove('show'); }
-
-// ── FILTRO QUARTOS ──
-function filterRooms(type, btn) {
-  document.querySelectorAll('.fbtn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  document.querySelectorAll('#roomsGrid .rc').forEach(rc => {
-    rc.style.display = (type==='all' || rc.dataset.type===type) ? '' : 'none';
+if (ham && mob) {
+  ham.addEventListener('click', () => {
+    const isOpen = mob.classList.toggle('open');
+    ham.classList.toggle('open');
+    ham.setAttribute('aria-expanded', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
   });
 }
 
-// ── FILTRO GALERIA ──
+function closeMob() {
+  if (mob) {
+    mob.classList.remove('open');
+    ham?.classList.remove('open');
+    ham?.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+}
+
+// ============================================
+// REVEAL — Intersection Observer (no libs)
+// ============================================
+if ('IntersectionObserver' in window) {
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+} else {
+  document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-visible'));
+}
+
+// ============================================
+// FILTROS (Galeria)
+// ============================================
 function filterGal(cat, btn) {
   document.querySelectorAll('.fbtn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
-  document.querySelectorAll('.gi').forEach(item => {
-    item.style.display = (cat === 'all' || item.dataset.cat === cat) ? '' : 'none';
+  document.querySelectorAll('.gal-g .gi').forEach(gi => {
+    gi.style.display = (cat === 'all' || gi.dataset.cat === cat) ? '' : 'none';
   });
 }
 
-// ── LIGHTBOX ──
-let lbCur = 0; const LB_SRCS = [];
+// ============================================
+// LIGHTBOX
+// ============================================
+let lbCur = 0;
+const LB_SRCS = Array.from(document.querySelectorAll('.gal-g .gi img')).map(img => img.src);
+
 function openLB(i) {
-  lbCur=i; const lbImg=document.getElementById('lbImg'); const lbCnt=document.getElementById('lbCnt');
-  if(!lbImg) return;
-  lbImg.src=LB_SRCS[i]||''; if(lbCnt) lbCnt.textContent=(i+1)+' / '+LB_SRCS.length;
-  document.getElementById('lb')?.classList.add('open'); document.body.style.overflow='hidden';
+  if (!LB_SRCS.length) return;
+  lbCur = i;
+  const lb = document.getElementById('lb');
+  if (!lb) return;
+  document.getElementById('lbImg').src = LB_SRCS[i];
+  lb.classList.add('open');
+  document.body.style.overflow = 'hidden';
 }
-function closeLB() { document.getElementById('lb')?.classList.remove('open'); document.body.style.overflow=''; }
+function closeLB() {
+  document.getElementById('lb')?.classList.remove('open');
+  document.body.style.overflow = '';
+}
 function navLB(d) {
-  lbCur=(lbCur+d+LB_SRCS.length)%LB_SRCS.length;
-  document.getElementById('lbImg').src=LB_SRCS[lbCur]||'';
-  document.getElementById('lbCnt').textContent=(lbCur+1)+' / '+LB_SRCS.length;
+  if (!LB_SRCS.length) return;
+  lbCur = (lbCur + d + LB_SRCS.length) % LB_SRCS.length;
+  document.getElementById('lbImg').src = LB_SRCS[lbCur];
 }
-document.getElementById('lb')?.addEventListener('click', e => { if(e.target===document.getElementById('lb')) closeLB(); });
+document.getElementById('lb')?.addEventListener('click', e => {
+  if (e.target === document.getElementById('lb')) closeLB();
+});
 document.addEventListener('keydown', e => {
-  if(!document.getElementById('lb')?.classList.contains('open')) return;
-  if(e.key==='Escape') closeLB(); if(e.key==='ArrowLeft') navLB(-1); if(e.key==='ArrowRight') navLB(1);
+  if (!document.getElementById('lb')?.classList.contains('open')) return;
+  if (e.key === 'Escape') closeLB();
+  if (e.key === 'ArrowLeft') navLB(-1);
+  if (e.key === 'ArrowRight') navLB(1);
 });
 
-// ── FORMULÁRIO CONTATO ──
-async function submitContact(e) {
+// ============================================
+// WHATSAPP MODAL
+// ============================================
+function openWAModal() {
+  document.getElementById('waModal')?.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeWAModal() {
+  document.getElementById('waModal')?.classList.remove('open');
+  document.body.style.overflow = '';
+}
+async function submitWAForm(e) {
   e.preventDefault();
-  const form = e.target;
-  const data = Object.fromEntries(new FormData(form));
+  const nome = document.getElementById('wa-nome').value;
+  const email = document.getElementById('wa-email').value;
+  const tel = document.getElementById('wa-tel').value;
+  const ci = document.getElementById('wa-in').value;
+  const co = document.getElementById('wa-out').value;
+  await sendToWebhook({ tipo: 'whatsapp_lead', nome, email, telefone: tel, checkin: ci, checkout: co });
+  const msg = encodeURIComponent(
+    `Olá! Me chamo ${nome}.\nE-mail: ${email}\nTelefone: ${tel}` +
+    (ci ? `\nCheck-in: ${ci}` : '') +
+    (co ? `\nCheck-out: ${co}` : '') +
+    `\n\nGostaria de mais informações sobre a Pousada Solar Dona Dora.`
+  );
+  window.open(`https://wa.me/${CONFIG.WA_NUMBER}?text=${msg}`, '_blank');
+  closeWAModal();
+}
+document.getElementById('waModal')?.addEventListener('click', e => {
+  if (e.target === document.getElementById('waModal')) closeWAModal();
+});
 
-  // GTM
-  pushLead('formulario_contato');
+// ============================================
+// POPUP DESCONTO
+// ============================================
+(function() {
+  if (localStorage.getItem('dp_shown')) return;
+  setTimeout(() => {
+    const popup = document.getElementById('dp');
+    if (!popup) return;
+    popup.classList.add('open');
+    localStorage.setItem('dp_shown', '1');
+  }, 5000);
+})();
 
-  await sendToWebhook({ tipo: 'contato', ...data });
-  form.reset();
-  document.getElementById('contactOk')?.classList.add('show');
+function closePopup() {
+  document.getElementById('dp')?.classList.remove('open');
+}
+async function submitPopup(e) {
+  e.preventDefault();
+  const email = document.getElementById('popup-email').value;
+  await sendToWebhook({ tipo: 'lead_popup', email, desconto: '10%' });
+  closePopup();
+}
+document.getElementById('dp')?.addEventListener('click', e => {
+  if (e.target === document.getElementById('dp')) closePopup();
+});
+
+// ============================================
+// COOKIE BANNER
+// ============================================
+if (localStorage.getItem('ck_status')) {
+  document.getElementById('cookieBanner')?.remove();
+}
+function acceptCookies() {
+  localStorage.setItem('ck_status', 'accepted');
+  document.getElementById('cookieBanner').style.display = 'none';
+}
+function declineCookies() {
+  localStorage.setItem('ck_status', 'declined');
+  document.getElementById('cookieBanner').style.display = 'none';
 }
 
-// ── TÍTULO DA ABA ao sair da página ──
-const tituloOriginal = document.title;
-document.addEventListener('visibilitychange', () => {
-  document.title = document.hidden
-    ? '👋 Volte Aqui — Estamos te esperando!'
-    : tituloOriginal;
+// ============================================
+// FORMS
+// ============================================
+async function submitContact(e) {
+  e.preventDefault();
+  const data = Object.fromEntries(new FormData(e.target));
+  await sendToWebhook({ tipo: 'contato', ...data });
+  e.target.reset();
+  document.getElementById('okMsg')?.classList.add('show');
+  setTimeout(() => document.getElementById('okMsg')?.classList.remove('show'), 6000);
+}
+async function submitPkgForm(e) {
+  e.preventDefault();
+  const data = Object.fromEntries(new FormData(e.target));
+  await sendToWebhook({ tipo: 'reserva_pacote', pacote: document.title, ...data });
+  e.target.reset();
+  document.getElementById('pkgOk')?.classList.add('show');
+}
+
+// ============================================
+// SET MIN DATE on date inputs
+// ============================================
+document.addEventListener('DOMContentLoaded', () => {
+  const today = new Date().toISOString().split('T')[0];
+  document.querySelectorAll('input[type="date"]').forEach(input => {
+    if (!input.min) input.min = today;
+  });
 });
