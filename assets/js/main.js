@@ -20,7 +20,7 @@ function buildBookingURL(checkin, checkout, adults, childAges) {
     guestStr += '-' + childAges.join('-');
   }
   if (!checkin || !checkout) {
-    return CONFIG.MOTOR_BASE + '/';
+    return null;
   }
   return `${CONFIG.MOTOR_BASE}/search/${checkin}/${checkout}/${guestStr}`;
 }
@@ -28,6 +28,10 @@ function buildBookingURL(checkin, checkout, adults, childAges) {
 function bookFromHero() {
   const ci = document.getElementById('book-checkin')?.value;
   const co = document.getElementById('book-checkout')?.value;
+  if (!ci || !co) {
+    alert('Preencha as datas de check-in e check-out para verificar disponibilidade.');
+    return;
+  }
   const guests = document.getElementById('book-guests')?.value || '2';
   const url = buildBookingURL(ci, co, guests);
   window.open(url, '_blank', 'noopener');
