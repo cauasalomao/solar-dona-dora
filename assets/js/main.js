@@ -7,7 +7,7 @@ const CONFIG = {
   WEBHOOK_URL: 'https://webhook.cidigitalmarketing.com/webhook/4f596ba5-158b-4c54-9958-0cf8353907ec',
   WA_NUMBER: '5537999996427',
   HOTEL_NAME: 'Pousada Solar Dona Dora',
-  MOTOR_BASE: 'https://pousadasolardonadora.com.br'
+  MOTOR_BASE: 'https://reservas.pousadasolardonadora.com.br'
 };
 
 // ============================================

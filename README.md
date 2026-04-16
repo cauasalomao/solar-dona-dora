@@ -41,7 +41,7 @@ solar-dona-dora/
 
 ## Integrações Configuradas
 
-- **Motor de reservas (Foco Multimídia)**: `https://pousadasolardonadora.com.br/search/[checkin]/[checkout]/[adults]`
+- **Motor de reservas (Foco Multimídia)**: `https://reservas.pousadasolardonadora.com.br/search/[checkin]/[checkout]/[adults]`
 - **WhatsApp**: +55 37 99999-6427
 - **Webhook**: configurado no main.js
 - **GTM**: GTM-W4K5VQJ

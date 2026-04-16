@@ -156,7 +156,7 @@
   "integrations": {
     "webhook_url": "https://webhook.cidigitalmarketing.com/webhook/4f596ba5-158b-4c54-9958-0cf8353907ec",
     "gtm_id": "GTM-W4K5VQJ",
-    "motor_base": "https://pousadasolardonadora.com.br",
+    "motor_base": "https://reservas.pousadasolardonadora.com.br",
     "maps_embed_url": "https://www.google.com/maps?ll=-20.681273,-46.094552&z=14&t=m&hl=pt-BR&gl=BR&output=embed",
     "domain": "https://pousadasolardonadora.com.br"
   },
