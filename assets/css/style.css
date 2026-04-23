@@ -566,6 +566,82 @@ section { padding: clamp(3rem, 7vw, 5.5rem) 0; }
 .bk-wa-link { color: #25D366; font-weight: 600; text-decoration: none; }
 .bk-wa-link:hover { text-decoration: underline; }
 
+/* WHATSAPP LEAD MODAL */
+.wa-form-modal {
+  position: fixed; inset: 0; z-index: 9600;
+  background: rgba(0,0,0,0.55);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; visibility: hidden; transition: opacity 0.3s var(--ease), visibility 0.3s var(--ease);
+  padding: 1rem;
+}
+.wa-form-modal.open { opacity: 1; visibility: visible; }
+.wa-form-box {
+  background: var(--surface); max-width: 440px; width: 100%;
+  border-radius: 14px; overflow: hidden; position: relative;
+  box-shadow: var(--shadow-lg);
+  animation: bkSlideUp 0.35s var(--ease);
+}
+.wa-form-close {
+  position: absolute; top: 0.85rem; right: 0.85rem;
+  background: rgba(0,0,0,0.06); border: none;
+  width: 36px; height: 36px; border-radius: 50%;
+  font-size: 1.4rem; line-height: 1; cursor: pointer; z-index: 2;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.2s; color: var(--text);
+}
+.wa-form-close:hover { background: rgba(0,0,0,0.12); }
+.wa-form-header {
+  padding: 1.5rem 1.5rem 0.4rem;
+  display: flex; gap: 0.85rem; align-items: center;
+}
+.wa-form-icon {
+  width: 48px; height: 48px; flex-shrink: 0;
+  background: #25D366; border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+}
+.wa-form-icon svg { width: 26px; height: 26px; fill: #fff; }
+.wa-form-header h3 { font-size: 1.12rem; margin: 0 0 0.15rem; color: var(--text); }
+.wa-form-header p { font-size: 0.85rem; color: var(--text-muted); margin: 0; line-height: 1.35; }
+.wa-form { padding: 1.2rem 1.5rem 1.6rem; display: flex; flex-direction: column; gap: 0.85rem; }
+.wa-form .fg { display: flex; flex-direction: column; gap: 0.35rem; margin: 0; }
+.wa-form label { font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); margin: 0; }
+.wa-form input {
+  padding: 0.75rem 0.85rem; border: 1px solid var(--border); border-radius: 8px;
+  font-size: 1rem; font-family: var(--font-body);
+  background: var(--bg); min-height: 46px; transition: border-color 0.2s;
+  width: 100%;
+}
+.wa-form input:focus { border-color: var(--accent); outline: none; }
+.wa-form input.invalid { border-color: #c0392b; background: #fff5f4; }
+.wa-form-submit {
+  margin-top: 0.4rem; width: 100%;
+  background: #25D366; color: #fff;
+  border: none; border-radius: 8px;
+  padding: 0.95rem 1rem; min-height: 50px;
+  font-weight: 700; font-size: 0.95rem; font-family: var(--font-body);
+  cursor: pointer; transition: background 0.2s, opacity 0.2s;
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+}
+.wa-form-submit:hover { background: #1ebe57; }
+.wa-form-submit:disabled { opacity: 0.7; cursor: wait; }
+.wa-form-disclaimer { text-align: center; font-size: 0.72rem; color: var(--text-muted); margin: 0.3rem 0 0; line-height: 1.4; }
+
+@media (max-width: 480px) {
+  .wa-form-modal { align-items: flex-end; padding: 0; }
+  .wa-form-box {
+    border-radius: 16px 16px 0 0; max-width: 100%;
+    max-height: 92vh; overflow-y: auto;
+    animation: waSlideUpMobile 0.32s var(--ease);
+  }
+  .wa-form-header { padding: 1.4rem 1.2rem 0.3rem; }
+  .wa-form { padding: 1rem 1.2rem 1.4rem; }
+  .wa-form-header h3 { font-size: 1.05rem; }
+}
+@keyframes waSlideUpMobile {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
 /* BLOG */
 .blog-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; }
 @media (min-width: 640px) { .blog-grid { grid-template-columns: 1fr 1fr; } }
@@ -625,5 +701,5 @@ section { padding: clamp(3rem, 7vw, 5.5rem) 0; }
 
 /* PRINT */
 @media print {
-  .hdr, .wa-btn, .bk-modal, .ck, .footer { display: none !important; }
+  .hdr, .wa-btn, .bk-modal, .wa-form-modal, .ck, .footer { display: none !important; }
 }
